@@ -1,20 +1,23 @@
 import { useState } from "react";
 import { TextInput, View, Text , Button} from "react-native";
 import { StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
     const [email,setEmail]= useState()
     const [password,setPassword]= useState()
+    const navigation = useNavigation(); 
 
     const TestLogin= ()=>{
-        if (email ==="seila@gmail.com" && password==="12345678"){
-                alert("email e senha corretos")
+        if (email ==="1" && password==="1"){
+        navigation.navigate("Home");
+      
         }else{
                 alert("email ou sennha incorretos")
         }}
     const styles = StyleSheet.create({
         container2: {
-          backgroundColor:"#0fc",
+         
           height: 40,
           margin: 6,
           borderWidth: 1,
