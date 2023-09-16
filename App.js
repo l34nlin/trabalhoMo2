@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -31,7 +30,7 @@ export default function App() {
         }}/>
         
         <Screen
-        name='Listas'
+        name='Lista'
         component={Lista}
         options={{
           tabBarIcon:({size})=><Feather name="menu" size={size}/>

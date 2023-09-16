@@ -4,6 +4,7 @@ import axios from "axios";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native"; 
 import Loading from "./Loading";
+import Login from "./Login";
 
 import CardDetails from "./CardDetails";
 const styles = StyleSheet.create({
@@ -53,7 +54,7 @@ const Home = () => {
   const RenderApi = ({ card }) => {
     return (
       <View style={styles.container}>
-        
+      
       <TouchableOpacity onPress={() => handleImageClick(card)}>
         <Image
           style={styles.image}
@@ -71,13 +72,14 @@ const Home = () => {
   return (
     <SafeAreaView>
       <StatusBar />
+    
       <FlatList
         data={api}
         renderItem={({ item }) => <RenderApi card={item} />}
       />
               {!loading && <Loading/>}
     </SafeAreaView>
-  );
+    );
 }
 
 export default Home;

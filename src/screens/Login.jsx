@@ -7,10 +7,19 @@ const Login = () => {
     const [email,setEmail]= useState()
     const [password,setPassword]= useState()
     const navigation = useNavigation(); 
+    const [pass,setPass]= useState(false);
 
     const TestLogin= ()=>{
         if (email ==="1" && password==="1"){
+            setPass(true)
         navigation.navigate("Home");
+        }else{
+                alert("email ou sennha incorretos")
+        }}
+        
+    const TestLogin2= ()=>{
+        if (email ==="1" && password==="1"){
+        navigation.navigate("Lista");
       
         }else{
                 alert("email ou sennha incorretos")
@@ -30,6 +39,7 @@ const Login = () => {
     <View >
         <Text>LOGiN</Text>
         <TextInput 
+    
         style={styles.container2}
         placeholder="email"
         value={email}
@@ -39,7 +49,9 @@ const Login = () => {
         placeholder="senha"
         value={password}
         onChangeText={setPassword}/>
-        <Button style={styles.container2} title="login" onPress={TestLogin}/>
+        <Button style={styles.container2} title="login (lista1)" onPress={TestLogin}/>
+        
+        <Button style={styles.container2} title="login (lista2)" onPress={TestLogin2}/>
     </View>
     </View>
     );
